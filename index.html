@@ -26,11 +26,11 @@
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
         }
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             margin-bottom: 0.5rem;
         }
         header p {
@@ -42,6 +42,9 @@
             color: white;
             padding: 0.8rem;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: white;
@@ -61,7 +64,7 @@
             background: white;
             padding: 2rem;
             margin-bottom: 1.5rem;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         h2 {
@@ -88,6 +91,15 @@
         ul li {
             margin-bottom: 0.5rem;
         }
+        /* Image Section Styling */
+        .section-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
         footer {
             background-color: #0f172a;
             color: white;
@@ -110,8 +122,9 @@
 
     <nav>
         <a href="#about">About</a>
+        <a href="#programs">Programs</a>
         <a href="#leadership">Leadership</a>
-        <a href="#academics">Academics & Facilities</a>
+        <a href="#academics">Academics</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -122,6 +135,27 @@
             <h2>Welcome to Lucent Group of Institutions</h2>
             <p>We are a premier educational institution located in Bharthana, offering top-tier CBSE-aligned coaching and schooling for primary and secondary levels. Our focus is on nurturing young minds, building strong conceptual foundations, and ensuring academic excellence.</p>
             <p style="margin-top: 1rem;"><span class="rating">Rating: 4.5 / 5 Stars</span> based on student and parent satisfaction in the local region.</p>
+            
+            <!-- Added Image 1 -->
+            <img src="joyful-learners.png" alt="Nurturing Joyful Learners" class="section-image">[span_5](start_span)[span_5](end_span)
+        </div>
+
+        <!-- Distinctive Programs Section (Added Image 2) -->
+        <div class="card" id="programs">
+            <h2>Distinctive Learning Programs</h2>
+            <p>We go beyond traditional academics by focusing on holistic growth, critical thinking, and future-ready skills for every student.</p>
+            
+            <!-- Added Image 2 -->
+            <img src="learning-programs.png" alt="Learning Beyond Traditional Subjects" class="section-image">[span_6](start_span)[span_6](end_span)
+        </div>
+
+        <!-- Student Development Care (Added Image 3) -->
+        <div class="card">
+            <h2>Comprehensive Student Development</h2>
+            <p>Our approach ensures balanced care across creative, intellectual, inventive, and sporty dimensions to build confident individuals.</p>
+            
+            <!-- Added Image 3 -->
+            <img src="student-care.png" alt="Care for Creative, Intellectual, Inventive and Sporty sides" class="section-image">[span_7](start_span)[span_7](end_span)
         </div>
 
         <!-- Leadership & Contact Grid -->
