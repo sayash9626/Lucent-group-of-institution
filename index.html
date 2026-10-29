@@ -3,195 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucent Group of Institutions (G.G. Classes) | Bharthana</title>
+    <title>The Lucent Group of Institutions (LGI) | Bharthana</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary: #1e3a8a;
-            --secondary: #2563eb;
-            --accent: #f59e0b;
-            --bg-color: #f8fafc;
-            --text-color: #334155;
+            --primary: #1e3a8a; /* Deep Academic Blue */
+            --secondary: #2563eb; /* Vibrant Blue */
+            --accent: #f59e0b; /* Gold/Yellow Accent */
+            --dark: #1f2937;
+            --light: #f8fafc;
+            --transition: all 0.3s ease;
         }
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
+
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
         }
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary);
             color: white;
-            padding: 2.5rem 1rem;
-            text-align: center;
+            padding: 8px 5%;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        header h1 {
-            font-size: 2.3rem;
-            margin-bottom: 0.5rem;
+
+        .top-bar i {
+            color: var(--accent);
+            margin-right: 5px;
         }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+        /* Navigation */
         nav {
-            background-color: #1e293b;
-            color: white;
-            padding: 0.8rem;
-            text-align: center;
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        nav a:hover {
-            color: var(--accent);
-        }
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .card {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h2 {
+
+        .logo-area i {
+            font-size: 2.2rem;
             color: var(--primary);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
         }
-        .grid {
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .cta-btn {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background: #d97706;
+            color: white;
+        }
+                    color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Leadership Section */
+        .leadership-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 40px;
+            justify-content: center;
         }
-        .info-box {
-            background: #f1f5f9;
-            padding: 1.2rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--primary);
-        }
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-        ul li {
-            margin-bottom: 0.5rem;
-        }
-        /* Image Section Styling */
-        .section-image {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        footer {
-            background-color: #0f172a;
-            color: white;
+                .leader-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 30px;
+            border-bottom: 4px solid var(--accent);
         }
-        .rating {
+
+        .leader-card i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .leader-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .leader-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        /* Stats & Highlights */
+        .stats-container {
+            background: var(--primary);
+            color: white;
+            padding: 60px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
             color: var(--accent);
-            font-weight: bold;
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-box p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Contact & Footer */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 60px 10% 20px 10%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        @media(max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h2 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Lucent Group of Institutions</h1>
-        <p>Also known as G.G. Classes | Excellence in Primary & Secondary Education</p>
-    </header>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#academics">Academics</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        
-        <!-- About Section -->
-        <div class="card" id="about">
-            <h2>Welcome to Lucent Group of Institutions</h2>
-            <p>We are a premier educational institution located in Bharthana, offering top-tier CBSE-aligned coaching and schooling for primary and secondary levels. Our focus is on nurturing young minds, building strong conceptual foundations, and ensuring academic excellence.</p>
-            <p style="margin-top: 1rem;"><span class="rating">Rating: 4.5 / 5 Stars</span> based on student and parent satisfaction in the local region.</p>
-            
-            <!-- Added Image 1 -->
-            <img src="joyful-learners.png" alt="Nurturing Joyful Learners" class="section-image">[span_5](start_span)[span_5](end_span)
+    
+    <!-- Academics Profile -->
+    <section id="academics">
+        <div class="section-title">
+            <h2>Academic Profile & Curriculum</h2>
+            <p>Building strong foundations for future careers</p>
         </div>
-
-        <!-- Distinctive Programs Section (Added Image 2) -->
-        <div class="card" id="programs">
-            <h2>Distinctive Learning Programs</h2>
-            <p>We go beyond traditional academics by focusing on holistic growth, critical thinking, and future-ready skills for every student.</p>
-            
-            <!-- Added Image 2 -->
-            <img src="learning-programs.png" alt="Learning Beyond Traditional Subjects" class="section-image">[span_6](start_span)[span_6](end_span)
-        </div>
-
-        <!-- Student Development Care (Added Image 3) -->
-        <div class="card">
-            <h2>Comprehensive Student Development</h2>
-            <p>Our approach ensures balanced care across creative, intellectual, inventive, and sporty dimensions to build confident individuals.</p>
-            
-            <!-- Added Image 3 -->
-            <img src="student-care.png" alt="Care for Creative, Intellectual, Inventive and Sporty sides" class="section-image">[span_7](start_span)[span_7](end_span)
-        </div>
-
-        <!-- Leadership & Contact Grid -->
-        <div class="grid">
-            <div class="card" id="leadership">
-                <h2>Leadership</h2>
-                <p><strong>Director:</strong> Dr. Anil Kumar (Radhe Mohan)</p>
-                <p><strong>Managing Director:</strong> Manoj Dhumre</p>
-                <p style="margin-top: 1rem;">Our experienced leaders guide the institution with a vision to empower students through quality education and disciplined mentoring.</p>
+        <div class="grid-3">
+            <div class="card" style="border-top-color: var(--accent);">
+                <i class="fas fa-child"></i>
+                <h3>Primary Level</h3>
+                <p>Focusing on foundational literacy, numerical dexterity, curiosity, and interactive activity-based learning.</p>
             </div>
-
-            <div class="card" id="contact">
-                <h2>Contact Details</h2>
-                <div class="info-box">
-                    <p><strong>Address:</strong> Mandi Samiti Road, Shri Karan Singh, Bharthana, Etawah, Uttar Pradesh – 206242</p>
-                    <p><strong>Phone:</strong> <a href="tel:+919412880091" style="color: var(--primary);">+91 94128 80091</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:lgibharthana@gmail.com" style="color: var(--primary);">lgibharthana@gmail.com</a></p>
-                </div>
+            <div class="card" style="border-top-color: var(--accent);">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Secondary & CBSE Curriculum</h3>
+                <p>Comprehensive preparation aligned with the CBSE framework, popularly recognized across Etawah as G.G. Classes.</p>
+            </div>
+            <div class="card" style="border-top-color: var(--accent);">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Experienced Faculty</h3>
+                <p>A team of passionate, highly qualified educators dedicated to mentoring every single student to reach their highest potential.</p>
             </div>
         </div>
-
-        <!-- Academic Highlights & Facilities -->
-        <div class="card" id="academics">
-            <h2>Academic Highlights & Facilities</h2>
-            <ul>
-                <li><strong>Outstanding Board Results:</strong> Frequently records high pass rates in CBSE board examinations (Class 10 & 12) with top scorers from Bharthana.</li>
-                <li><strong>Smart Classrooms:</strong> Fully equipped with modern smartboard technology for interactive and digital learning.</li>
-                <li><strong>Professional Faculty:</strong> Highly qualified and experienced educators dedicated to individual student growth.</li>
-                <li><strong>CBSE Curriculum:</strong> Structured academic framework focusing on conceptual clarity and competitive exam preparation.</li>
-            </ul>
+    </section>
+   <!-- Contact Section -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>The Lucent Group of Institutions</h4>
+                <p>Also known as LGI / G.G. Classes. Your trusted destination for quality English-medium education in Bharthana.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#academics">Academics</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#contact">Admissions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Mandi Samiti Road (Mandi Road), Shri Karan Singh, Bharthana, Etawah, U.P. – 206242</p>
+                <p><i class="fas fa-phone-alt"></i> +91 94128 80091</p>
+                <p><i class="fas fa-envelope"></i> lgibharthana@gmail.com</p>
+            </div>
         </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Lucent Group of Institutions (G.G. Classes), Bharthana. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Lucent Group of Institutions (LGI). All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
